@@ -7,5 +7,9 @@
         <item name="android:colorEdgeEffect">@color/Black</item>
     </style>
 
+    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.NoActionBar.Bridge">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
 
 </resources>
