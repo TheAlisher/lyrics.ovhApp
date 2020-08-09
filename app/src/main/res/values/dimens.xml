@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--margin-->
+    <dimen name="margin_10dp">10dp</dimen>
+
+    <!--marginStart-->
+    <dimen name="marginStart_10dp">10dp</dimen>
+
+    <!--marginLeft-->
+    <dimen name="marginLeft_10dp">10dp</dimen>
+
+    <!--marginTop-->
+    <dimen name="marginTop_10dp">10dp</dimen>
+
+    <!--marginEnd-->
+    <dimen name="marginEnd_10dp">10dp</dimen>
+
+    <!--marginRight-->
+    <dimen name="marginRight_10dp">10dp</dimen>
+
+    <!--marginBottom-->
+    <dimen name="marginBottom_10dp">10dp</dimen>
+
+    <!--textSize-->
+    <dimen name="textSize_20sp">20sp</dimen>
+
+
+</resources>

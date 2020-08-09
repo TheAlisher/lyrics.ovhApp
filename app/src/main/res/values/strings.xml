@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">lyrics.ovh App</string>
+
+    <string name="text_main_onboard">
+        <b>lyrics.ovh - </b>это приложение для того чтобы найти тексты песень в жанре <i>лирика</i>.
+        \n
+        \n<i> Подсказка: напишите в <b>Artist… </b> Billie Eilish, а в <b>Title… </b> bad guy</i>
+        \n
+    </string>
+    <string name="hint_main_artist">Artist…</string>
+    <string name="hint_main_title">Title…</string>
+    <string name="button_main_get_lyrics">Get lyrics</string>
+
+
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/background_gradient_moonlit_asteroid"
+    android:orientation="vertical"
+    tools:context=".presentation_ui.main.MainActivity">
+
+    <TextView
+        android:id="@+id/text_main_helper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10dp"
+        android:fontFamily="monospace"
+        android:text="@string/text_main_onboard"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayout_main_artist"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10dp"
+        app:boxBackgroundColor="@color/MostlyDesaturatedDarkBlue"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/White"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconDrawable="@drawable/icon_clear"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false">
+
+        <EditText
+            android:id="@+id/edit_main_artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/hint_main_artist"
+            android:fontFamily="monospace"
+            android:hint="@string/hint_main_artist"
+            android:inputType="text"
+            android:textColor="@color/White"
+            android:textColorHint="@color/White"
+            android:textCursorDrawable="@drawable/custom_cursor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayout_main_title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10dp"
+        app:boxBackgroundColor="@color/MostlyDesaturatedDarkBlue"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/White"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconDrawable="@drawable/icon_clear"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false">
+
+        <EditText
+            android:id="@+id/edit_main_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/hint_main_title"
+            android:fontFamily="monospace"
+            android:hint="@string/hint_main_title"
+            android:inputType="text"
+            android:textColor="@color/White"
+            android:textColorHint="@color/White"
+            android:textCursorDrawable="@null" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_main_get_lyrics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10dp"
+        android:background="@drawable/background_gradient_lawrencium"
+        android:fontFamily="monospace"
+        android:onClick="mainGetLyricsClick"
+        android:text="@string/button_main_get_lyrics"
+        android:textAllCaps="false"
+        android:textColor="@color/White"
+        android:textSize="@dimen/textSize_20sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progressBar_main_loading_lyrics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_main_lyrics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textColor="@color/White"
+                android:textSize="@dimen/textSize_20sp"
+                android:textStyle="italic"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
