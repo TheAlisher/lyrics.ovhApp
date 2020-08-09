@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,11 +20,14 @@ import com.example.lyricsovh.App;
 import com.example.lyricsovh.R;
 import com.example.lyricsovh.data.remote.LyricsOvhAPIClient;
 import com.example.lyricsovh.model.LyricsOvh;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView textHelper;
+    private TextInputLayout inputLayoutArtist;
     private EditText editArtist;
+    private TextInputLayout inputLayoutTitle;
     private EditText editTitle;
     private Button buttonGetLyrics;
     private ProgressBar progressBarLoadingLyrics;
@@ -54,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializationViews() {
         textHelper = findViewById(R.id.text_main_helper);
+        inputLayoutArtist = findViewById(R.id.inputLayout_main_artist);
         editArtist = findViewById(R.id.edit_main_artist);
+        inputLayoutTitle = findViewById(R.id.inputLayout_main_title);
         editTitle = findViewById(R.id.edit_main_title);
         buttonGetLyrics = findViewById(R.id.button_main_get_lyrics);
         progressBarLoadingLyrics = findViewById(R.id.progressBar_main_loading_lyrics);
@@ -62,10 +66,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mainGetLyricsClick(View view) {
-        hideKeyboard();
-        progressBarLoadingLyrics.setVisibility(View.VISIBLE);
-        textLyrics.setText("");
-        lyricsovhGetAction();
+        if (editArtist.getText().toString().isEmpty() || editTitle.getText().toString().isEmpty()) {
+            inputLayoutArtist.setError("Напишите имя исполнителя");
+            inputLayoutTitle.setError("Напишите название песни");
+        } else {
+            inputLayoutArtist.setErrorEnabled(false);
+            inputLayoutTitle.setErrorEnabled(false);
+            hideKeyboard();
+            clearAllFocus();
+            progressBarLoadingLyrics.setVisibility(View.VISIBLE);
+            textLyrics.setText("");
+            lyricsovhGetAction();
+        }
     }
 
     private void hideKeyboard() {
@@ -74,6 +86,11 @@ public class MainActivity extends AppCompatActivity {
             InputMethodManager IMM = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             IMM.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
+    }
+
+    private void clearAllFocus() {
+        editTitle.clearFocus();
+        editArtist.clearFocus();
     }
 
     private void lyricsovhGetAction() {
@@ -109,6 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void lyricsovhGetActionOnFailure(Exception exception) {
         progressBarLoadingLyrics.setVisibility(View.INVISIBLE);
-        textLyrics.setText(exception.getMessage());
+        textLyrics.setText("Не найдено");
     }
 }
