@@ -67,8 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void mainGetLyricsClick(View view) {
         if (editArtist.getText().toString().isEmpty() || editTitle.getText().toString().isEmpty()) {
-            inputLayoutArtist.setError("Напишите имя исполнителя");
-            inputLayoutTitle.setError("Напишите название песни");
+            if (editArtist.getText().toString().isEmpty()) {
+                inputLayoutArtist.setError("Напишите имя исполнителя");
+            }
+            if (editTitle.getText().toString().isEmpty()) {
+                inputLayoutTitle.setError("Напишите название песни");
+            }
         } else {
             inputLayoutArtist.setErrorEnabled(false);
             inputLayoutTitle.setErrorEnabled(false);
@@ -106,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Exception exception) {
+
                         lyricsovhGetActionOnFailure(exception);
                         Log.e("anime", exception.getMessage());
                     }

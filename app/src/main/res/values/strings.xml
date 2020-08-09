@@ -2,7 +2,7 @@
     <string name="app_name">lyrics.ovh App</string>
 
     <string name="text_main_onboard">
-        <b>lyrics.ovh -</b> это приложение для того чтобы найти тексты песен в жанр е<b> \"лирика\"</b>.
+        <b>lyrics.ovh -</b> это приложение для того чтобы найти тексты песен в жанре<b> \"лирика\"</b>.
         \n
         \n<i>Подсказка: напишите в<b> Artist… -> </b>Billie Eilish, а в<b> Title… -> </b>bad guy
         и нажмите на кнопку <b>Get Lyrics</b></i>
