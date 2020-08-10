@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@drawable/background_gradient_purple_bliss"
+    android:background="@drawable/background_gradient_red_sunset"
     android:orientation="vertical"
     tools:context=".presentation_ui.main.MainActivity">
 
@@ -30,6 +30,7 @@
         app:boxBackgroundColor="@color/MostlyDesaturatedDarkBlue"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:boxStrokeColor="@color/White"
         app:boxStrokeWidth="0dp"
@@ -61,6 +62,7 @@
         android:layout_margin="@dimen/margin_10dp"
         app:boxBackgroundColor="@color/MostlyDesaturatedDarkBlue"
         app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:boxStrokeColor="@color/White"
