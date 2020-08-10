@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private void setGradientStatusBar(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = activity.getWindow();
-            Drawable background = getResources().getDrawable(R.drawable.background_gradient_red_sunset);
+            Drawable background = getResources().getDrawable(R.drawable.background_gradient_moonlit_asteroid);
             window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
             window.setBackgroundDrawable(background);
         }
