@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class AppPreferences {
 
-    public static final String PREF_IS_FIRST = "is_first";
+    private static final String PREF_IS_FIRST = "is_first";
 
     private SharedPreferences preferences;
 
