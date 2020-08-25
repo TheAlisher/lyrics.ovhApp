@@ -25,10 +25,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static void start(Context context) {
-        context.startActivity(new Intent(context, MainActivity.class));
-    }
-
     private TextView textHelper;
     private TextInputLayout inputLayoutArtist;
     private EditText editArtist;
